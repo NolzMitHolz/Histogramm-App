@@ -7,12 +7,12 @@ import java.lang.*;
 
 public class Main extends Frame {
 
-    private final int height;
-    private final int width;
+    private int height;
+    private int width;
     private String pathFile;
     private String destinationPath;
-    private final char[] alphabet;
-    private final int[] counter;
+    private char[] alphabet;
+    private int[] counter;
     private String rawText;
 
 
@@ -205,14 +205,14 @@ public class Main extends Frame {
             //Die Datei wird in myObj gespeichert. Das, was in Klammern steht, ist der Dateipfad der Datei.
             File myObj = new File(getPathFile());
             //myReader liest jede zeile aus und solange es eine weitere Zeile gibt, wird diese in result gespeichert
-            if(myObj.getAbsolutePath().endsWith(".txt")) {
+
                 Scanner myReader = new Scanner(myObj);
                 while (myReader.hasNextLine()) {
                     result.append(myReader.nextLine());
                 }
                 setText(result.toString());
                 myReader.close();
-            }
+
         } catch (FileNotFoundException ignored) {
 
         }
