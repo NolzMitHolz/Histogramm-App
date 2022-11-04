@@ -71,7 +71,6 @@ public class Main extends Frame {
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.insets = new Insets(20,200,0,0);
-        c.ipady = 0;
         c.weightx = 0.5;
         c.gridwidth = 1;
         c.ipady = 2;
@@ -215,8 +214,8 @@ public class Main extends Frame {
                 setText(result.toString());
                 myReader.close();
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Es gibt ein Fehler");
+        } catch (FileNotFoundException ignored) {
+
         }
     }
     private String allesKlein(String finalText){
@@ -249,15 +248,11 @@ public class Main extends Frame {
                 nowNumber = i;
             }
         }
-        System.out.println(nowNumber);
 
         return nowNumber;
     }
     private double berechneProzent(int maxNumber){
-        double prozent = (100.0/counter[maxNumber]);
-        double numberProzent = ((maxNumber/100.0));
-        System.out.println(numberProzent);
-        return prozent;
+        return (100.0/counter[maxNumber]);
     }
     private void gebeAus(double prozent, int maxNumber) {
         String[] result = new String[alphabet.length];
