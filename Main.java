@@ -207,12 +207,14 @@ public class Main extends Frame {
             //Die Datei wird in myObj gespeichert. Das, was in Klammern steht, ist der Dateipfad der Datei.
             File myObj = new File(getPathFile());
             //myReader liest jede zeile aus und solange es eine weitere Zeile gibt, wird diese in result gespeichert
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                result.append(myReader.nextLine());
+            if(myObj.getAbsolutePath().endsWith(".txt")) {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    result.append(myReader.nextLine());
+                }
+                setText(result.toString());
+                myReader.close();
             }
-            setText(result.toString());
-            myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Es gibt ein Fehler");
         }
