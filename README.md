@@ -1,7 +1,7 @@
 # Histogramm-App
 Eine kleine App von mir. Man kann eine .txt Datei öffnen und es wird gezählt wie oft welcher Buchstabe vorkommt.
 
-Quellcode: src/main.java
+Quellcode: src/Main.java
 
 
-executable: src/main.jar
+executable: src/histo.jar
